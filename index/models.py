@@ -6,12 +6,12 @@ from django.utils import timezone
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    category = models.CharField(max_length=10)
-    content = models.TextField()
-    pub_date = models.DateTimeField(default=timezone.now)
+    tag = models.CharField(max_length=100)
+    pub_time = models.DateTimeField(default=timezone.now)
+    body = models.TextField()
 
     class Meta:
-        ordering = ('-pub_date',)
+        ordering = ('-pub_time',)
 
     def __unicode__(self):
         return self.title

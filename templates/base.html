@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}
+            首页
+        {% endblock %}
+    </title>
+    <script src="/static/js/common/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/static/img/common/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/common/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index/index.css">
+    <!-- 阿里妈妈图标库 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_406999_6yrtxkzgi9wo2yb9.css"  >
+    <!-- end -->
+    {% block css %}
+        css文件
+    {% endblock %}
+
+</head>
+<body>
+    <div id="mask" class="hide"></div>
+    {% include 'navbar.html' %}
+    <section><div class="container"><div class="row">
+    {% block content %}
+        {% block aside %}{% endblock %}
+        {% block main  %}{% endblock %}
+    {% endblock %}
+    </div></div></section>
+    {% include 'footer.html' %}
+    <script src="/static/js/common/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{#  index.html #}
+{% extends 'base.html' %}
+{% block title %}
+    {{ detail.title }}
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/common/markdown.css">
+{% endblock %}
+{%  block content %}
+    {% block aside %}{% include 'aside.html' %}{% endblock %}
+    {% block main %}
+        <main  class="col-md-9" >
+            <article>
+                <header style="margin-bottom: 30px">
+                    <h3 class="text-center">
+                        <a href="/article/id/{{ detail.id }}" class="text-muted">
+                            {{ detail.title }}
+                        </a>
+                    </h3>
+                    <div class="text-center" style="color: #999;font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size: 12px;">
+                        <i class="iconfont icon-rili-copy"></i>
+                        发表于: {{ detail.pub_time }}
+                    </div>
+                </header>
+                <div class="body markdown-body" >
+                    {{ detail.body | safe }}
+                </div>
+            </article>
+            <nav>
+                <ul class="pager">
+{#                    <li class="previous"><a href="#"><span aria-hidden="true"><</span> 上一页</a></li>#}
+                    <li class="next"><a href="javascript: history.back()">返回</a></li>
+                </ul>
+            </nav>
+        </main>
+    {% endblock %}
+{% endblock %}
+
