@@ -4,6 +4,6 @@ from .models import Article
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'tag', 'pub_time')
+    list_display = ('title', 'tag', 'type', 'pub_time' )
 
 admin.site.register(Article, PostAdmin)

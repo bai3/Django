@@ -10,7 +10,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     amount = Article.objects.count()
-    template = get_template('index.html')
+    tag_amount = Article.objects.values('tag').distinct().count()
+    type_amount = Article.objects.values('type').distinct().count()
+    template = get_template('index/index.html')
     articles = Article.objects.all()
     for article in articles:
         article.body = markdown(article.body)
@@ -28,8 +30,29 @@ def index(request):
 
 def article(request, id):
     amount = Article.objects.count()
-    tempalte = get_template('article.html')
+    tag_amount = Article.objects.values('tag').distinct().count()
+    type_amount = Article.objects.values('type').distinct().count()
+    tempalte = get_template('index/article.html')
     detail = Article.objects.get(id=id)
     detail.body = markdown(detail.body)
     html = tempalte.render(locals())
     return HttpResponse(html)
+
+
+def allarticles(request):
+    amount = Article.objects.count()
+    tag_amount = Article.objects.values('tag').distinct().count()
+    type_amount = Article.objects.values('type').distinct().count()
+    tempalte = get_template('index/articlesList.html')
+    articles = Article.objects.all()
+    paginator = Paginator(articles, 10)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage:
+        articles = paginator.page(paginator.num_pages)
+    html = tempalte.render(locals())
+    return HttpResponse(html)
+

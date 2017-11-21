@@ -1,0 +1,55 @@
+{#  index.html #}
+{% extends 'index/base.html' %}
+{% block title %}
+    首页
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/common/markdown.css">
+{% endblock %}
+{%  block content %}
+    {% block aside %}{% include 'index/aside.html' %}{% endblock %}
+    {% block main %}
+        <main  class="col-md-9" >
+        {% if articles.number == 1 %}
+            <div class="jumbotron">
+                <h1 style="font-family: 'Indie Flower'">Oh I know what I'm supposed to do Now</h1>
+                <p class="logo text-center" style="color: #1b1f23">--&nbsp;&nbsp;By bai3</p>
+                <p><a class="btn btn-primary btn-lg" href="https://bai3.github.io/resume/" role="button" target="_blank">Know more about me</a></p>
+            </div>
+        {% endif %}
+            {% for article in articles %}
+            <article>
+                <header style="margin-bottom: 30px">
+                    <h3 class="text-center">
+                        <a href="/article/{{ article.id }}" class="text-muted">
+                            {{ article.title }}
+                        </a>
+                    </h3>
+                    <div class="text-center" style="color: #999;font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;font-size: 12px;">
+                        <i class="iconfont icon-rili-copy"></i>
+                        发表于: {{ article.pub_time }}
+                    </div>
+                </header>
+                <div class="body markdown-body" style="overflow-y: hidden;">
+                    {{ article.body | truncatechars:400| safe }}
+                </div>
+                <div class="footer text-center" >
+                    <a href="/article/{{ article.id }}" class="btn-readmore" role="button">阅读全文»</a>
+                </div>
+            </article>
+            {% endfor %}
+            <nav>
+                <ul class="pager">
+                    {% if articles.has_previous %}
+                    <li class="previous"><a  href="?page={{ articles.previous_page_number }}"><span aria-hidden="true"><</span> 上一页</a></li>
+                    {% endif %}
+
+                    {% if articles.has_next %}
+                    <li class="next"><a href="?page={{ articles.next_page_number }}">下一页 <span aria-hidden="true">></span></a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </main>
+    {% endblock %}
+{% endblock %}
+
