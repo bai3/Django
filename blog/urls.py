@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from index.views import index, article, allarticles
+from index.views import index, article, allarticles, page_not_found, show
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^article/(\w+)$', article),
     url(r'^articlesList$', allarticles),
+    url(r'^show$', show),
 ]
+handler404 = page_not_found
+
+

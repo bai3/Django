@@ -1,6 +1,6 @@
 {# 边栏 #}
-<aside class="col-md-3 visible-md visible-lg" >
-<div style="background: #fff;padding: 20px 10px">
+<aside class="col-md-3 visible-md visible-lg sticky" >
+<div style="background: #fff;padding: 20px 10px;border-radius: 5px">
         <img src="/static/img/common/logo.png" class="img-responsive img-rounded center-block" style="width: 50%;margin-bottom: 20px">
         <h4 class="text-center" style="font-weight: bolder">白三</h4>
         <p class="text-center text-muted" style="font-size: 1.3rem">
@@ -9,19 +9,19 @@
         <div class="row" style="margin: 0 5px">
             <div class="col-md-4 text-center">
                 <a href="/articlesList" class="text-muted">
-                    <p style="margin: 0"><strong>{{ amount }}</strong></p>
+                    <p style="margin: 0"><strong>{{ total.1 }}</strong></p>
                     <p>日志</p>
                 </a>
             </div>
             <div class="col-md-4 text-center">
                 <a href="/articlesList" class="text-muted">
-                    <p style="margin: 0"><strong>{{ type_amount }}</strong></p>
+                    <p style="margin: 0"><strong>{{ total.3 }}</strong></p>
                     <p>分类</p>
                 </a>
             </div>
             <div class="col-md-4 text-center">
                 <a href="/articlesList" class="text-muted">
-                    <p style="margin: 0"><strong>{{ tag_amount }}</strong></p>
+                    <p style="margin: 0"><strong>{{ total.2 }}</strong></p>
                     <p>标签</p>
                 </a>
             </div>

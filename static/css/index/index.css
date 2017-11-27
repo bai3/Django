@@ -1,3 +1,16 @@
+/*只在Chrome和FireFox 执行*/
+@media screen and (-webkit-min-device-pixel-ratio:0){
+ .sticky{
+     position: sticky;
+     top: 53px;
+ }
+}
+@media screen and (min--moz-device-pixel-ratio: 0){
+ .sticky{
+     position: sticky;
+     top: 53px;
+ }
+}
 body{
     font: 14px/1.5 "PingFang SC", "Microsoft YaHei", sans-serif;    
     background-color: #ebebeb;
@@ -97,4 +110,11 @@ article .body{
 }
 .markdown-body{
     font-size: 1em;
+}
+body section .container .row .ShowCard:hover{
+    border: 1px solid red;
+    -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    -webkit-transform: translate3d(0, -2px , 0);
+    transform: translate3d(0, -2px , 0);
 }

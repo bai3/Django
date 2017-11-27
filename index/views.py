@@ -1,17 +1,30 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
-from .models import Article
+from .models import Article, Work
 from markdown import markdown
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
 
-def index(request):
+def page_not_found(request):
+    template = get_template('404.html')
+    return HttpResponse(template)
+
+
+def common():
+    work_total = Work.objects.count()
     amount = Article.objects.count()
     tag_amount = Article.objects.values('tag').distinct().count()
     type_amount = Article.objects.values('type').distinct().count()
+    return work_total, amount, tag_amount, type_amount
+
+
+# 首页
+def index(request):
+    total = common()
+    light = 1
     template = get_template('index/index.html')
     articles = Article.objects.all()
     for article in articles:
@@ -28,10 +41,10 @@ def index(request):
     return HttpResponse(html)
 
 
+# 文章详情
 def article(request, id):
-    amount = Article.objects.count()
-    tag_amount = Article.objects.values('tag').distinct().count()
-    type_amount = Article.objects.values('type').distinct().count()
+    light = 2
+    total = common()
     tempalte = get_template('index/article.html')
     detail = Article.objects.get(id=id)
     detail.body = markdown(detail.body)
@@ -39,14 +52,14 @@ def article(request, id):
     return HttpResponse(html)
 
 
+# 文章目录
 def allarticles(request):
-    amount = Article.objects.count()
-    tag_amount = Article.objects.values('tag').distinct().count()
-    type_amount = Article.objects.values('type').distinct().count()
+    total = common()
     tempalte = get_template('index/articlesList.html')
     articles = Article.objects.all()
     paginator = Paginator(articles, 10)
     page = request.GET.get('page')
+    light = 2
     try:
         articles = paginator.page(page)
     except PageNotAnInteger:
@@ -56,3 +69,12 @@ def allarticles(request):
     html = tempalte.render(locals())
     return HttpResponse(html)
 
+
+# 作品展示
+def show(request):
+    light = 3
+    works = Work.objects.all()
+    total = common()
+    template = get_template('index/show.html')
+    html = template.render(locals())
+    return HttpResponse(html)

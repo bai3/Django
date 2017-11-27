@@ -1,0 +1,27 @@
+{#  index.html #}
+{% extends 'index/base.html' %}
+{% block title %}
+    作品展示
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/common/markdown.css">
+{% endblock %}
+{%  block content %}
+    {% for work in works %}
+    <div class="col-md-3 col-sm-4">
+        <div class="thumbnail ShowCard">
+            <a href="{{ work.url }}">
+                <img src="{{ work.img_url }}" class="img-responsive">
+            </a>
+            <div class="caption">
+                <h3 class="text-center">{{ work.title }}</h3>
+                <p class="text-center">
+                    <a href="{{ work.url }}" class="btn btn-default" >查看详情</a>
+                    <a href="{{ work.github_url }}" class="btn btn-primary">&nbsp;&nbsp;Github&nbsp;</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+

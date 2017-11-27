@@ -6,17 +6,18 @@
 {% block css %}
     <link rel="stylesheet" href="/static/css/common/markdown.css">
 {% endblock %}
+{% block banner %}
+    <div class="jumbotron" style="opacity:.3;margin-top: 50px ">
+        <h1>
+            <img src="/static/img/common/header.png" class="img-responsive center-block" style="opacity: .8;width: 627px;">
+        </h1>
+        <p style="text-align: center"><a class="btn btn-primary btn-lg" href="https://bai3.github.io/resume/" role="button" target="_blank">Know more about me</a></p>
+    </div>
+{% endblock %}
 {%  block content %}
     {% block aside %}{% include 'index/aside.html' %}{% endblock %}
     {% block main %}
         <main  class="col-md-9" >
-        {% if articles.number == 1 %}
-            <div class="jumbotron">
-                <h1 style="font-family: 'Indie Flower'">Oh I know what I'm supposed to do Now</h1>
-                <p class="logo text-center" style="color: #1b1f23">--&nbsp;&nbsp;By bai3</p>
-                <p><a class="btn btn-primary btn-lg" href="https://bai3.github.io/resume/" role="button" target="_blank">Know more about me</a></p>
-            </div>
-        {% endif %}
             {% for article in articles %}
             <article>
                 <header style="margin-bottom: 30px">
