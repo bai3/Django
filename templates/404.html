@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    找不到该页面
-</body>
-</html>
+{#  404测试页面 #}
+{% extends 'index/base.html' %}
+{% block title %}
+   404 No Found
+{% endblock %}
+{%  block content %}
+    <h1 style="color: #fff;line-height: 94px">
+        404 No Found<br/>
+        你的页面已经消失在这宇宙中
+    </h1>
+{% endblock %}
+

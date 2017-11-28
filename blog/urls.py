@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from index.views import index, article, allarticles, page_not_found, show
+from index.views import index, article, allarticles, page_not_found, show, login, register
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -23,7 +23,10 @@ urlpatterns = [
     url(r'^article/(\w+)$', article),
     url(r'^articlesList$', allarticles),
     url(r'^show$', show),
+    url(r'^404$', page_not_found),
+    url(r'^login$', login),
+    url(r'^register$', register),
 ]
-handler404 = page_not_found
+# handler404 = page_not_found
 
 
