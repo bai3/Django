@@ -20,6 +20,7 @@ from index.views import index, article, allarticles, page_not_found, show, login
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
+    url(r'^index$', index),
     url(r'^article/(\w+)$', article),
     url(r'^articlesList$', allarticles),
     url(r'^show$', show),

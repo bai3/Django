@@ -1,5 +1,0 @@
-from django.apps import AppConfig
-
-
-class VueappConfig(AppConfig):
-    name = 'vueapp'
