@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        登录
+    </title>
+    <script src="/static/js/common/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/static/img/common/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/common/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index/auth/register.css">
+    <!-- 阿里妈妈图标库 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_406999_7e73qkalfxkcsor.css">
+    <!-- end -->
 </head>
-<body>
-    登录页面
+<body lang="zh-CN">
+    <div class="sign">
+        <div class="logo"><a href="/"><img src="/static/img/common/logo2.png" alt="Logo" style="width: 117px"></a></div>
+        <div class="main">
+            <h4 class="title">
+                <div class="normal-title">
+                    <a  href="/login" class="active">登录</a>
+                    <b>·</b>
+                    <a  href="/register">注册</a>
+                </div>
+            </h4>
+            <div>
+                <form accept-charset="UTF-8" method="post" class="new_user">
+                    <div class="input-prepend restyle">
+                        <input placeholder="手机号或邮箱" type="text">
+                        <i class="iconfont icon-weibiaoti1"></i>
+                    </div>
+                    <div class="input-prepend restyle no-radius">
+                        <input placeholder="密码" type="password" >
+                        <i class="iconfont icon-lock1"></i>
+                    </div>
+                    <div class="input-prepend">
+                        <input placeholder="验证码" type="text" style="padding-right: 112px">
+                        <i class="iconfont icon-yanzhengma1"></i>
+                        <img style="position: absolute;top:4px;left: 177px;" src="data:image/gif;base64,R0lGODdheAAeAIQAAP////X1/8vL/8XF/8HB/729/7q6/7S0/6+v/5qa/5CQ/3d3/3R0/2pq/2dn/2Nj/19f/1NT/0FB/z8//y8v/xgY/xUV/xMT/wQE/wEB/wAA/wAAAAAAAAAAAAAAAAAAACwAAAAAeAAeAEAI/wABCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFhxo0ANAAoKOGjwAAaAAAQAOAkwA0AACgAYBLDQAAaNAAoKYGABo0ANAAAIAGDQCCAtBAlCiAo0iTKl3KtKnTp1ABaNAAAIAGDQAAaHgAQIMDDQAAaBirAQAADRoAqNUAAICGt28BAMAAQAMADQDyLtDAVwMAABoACB5MuLDhw4gTK17MuLHjx5AjS46sQQMADZgBaAagAQAADQBCa9AAAIAGAAA0aACgobVrDQBiywaAQINt2xgA6N7Nu7fv38CDCx/OWwMAABoAANCgAQAADQA0AJiuAYB1DQCyawAAQAOA7xrCh/8HAEADAA0aAADQAECDe/cANGgAQL++/fv48+vfz7+/f4AABA4kWNDgQYQJFS5k2NDhQ4gRJU6kWNHiRYwZNW7k2NEjQQ0aAGgAUNIkAA0AAGgA0BKABgAANACgqQEAAA05cwIAoAHATw0AAGjQAMCoBgAANBgA0NTpU6hRpU6lWtWqBgAANAAAoAHAVw0ANAAAoEEDALQaAKzVAACABgBxNczVAEDDXQAaAOzVAEDDX8AaAAwmXNjwYcSJFS9mDEADAAAaAEzWAACABgAaAGzWQAAABA0aAADQAACABg0AAGgA0BqABgAANMwGAEADgAIAdGvQAEADAODBhQ8nXtz/+HHkyYFT0NC8eQYA0aVX0FDdegMA2bNr4N5dAwAACgBoAAAgAgANANSvB6ABwAQA8eXPp1/f/n38+fXv59/fP0AAAgcSLGjwIMKEChcybOjwIcSIEidSrGjxIsaMGjdy7OjxI8iKGkZqAGBSA0qUAFZqaNkSAAANMmfSBGDzJgANOnfqBODzJ9CgQocSLWr06E8NSgFoAOD0KQANAABoAGAVgAYAADQAAKBBA4CwYsNqAGDWrAYAADSw1QBAA1wAcufSrWv3Lt68evdaAKABgIbAgQEQBqABAAANABYD0AAAgAYAkjUAAKABAGYAGgBoAABAgwYAGgCQJq3h9GkA/6pXs27t+jXs2LJnawBgW4MGALo1aACgAQAADRoAENcAAIAGDQAAaAAAQIMGANI1AACgAYAGANo1AOju/Tv48OLHky9vnrwGAAA0AACgQQMAABoAaABgXwOA/BoA8NcAACAADQAIFgQQgYEGAAA0AHCoAYAGABMnatAAAGNGjRs5dvT4EWRIDQAAaABwUgMAABoAaADwUgMAmRoA1NQAAIAGDQAAaADwE4AGAAA0SNAAAIAGAAA0NNUAAIAGAFOpVrV6FWtWrVu5HtAAAIAGsQAAaDAAQIMADQA0AHALQAMAABoA1NUAAIAGAHsBaADwVwMADQASANAAALEGDQA0AG5w/BhyZMmTKVe2fBmABg0AOHPWoAFAaAAaNAAwfVqDBgCrAWgA8Br2aw0DNACwrUHDBQAANPQOAECDBgDDiRc3fhx5cuXLmTd3PlxDdOnTNQCwfl1Ddu0aAHT3/h18ePHjyZc3fx59evXr2YsPCAA7" >
+                    </div>
+                    <div class="remember-btn">
+                        <input type="checkbox" value="true" checked="checked" style="vertical-align: text-bottom;"><span>记住我</span>
+                    </div>
+                    <div class="forget-btn">
+                        <a href="/" >忘记密码</a>
+                    </div>
+                    <input type="submit" name="commit" value="登录" class="sign-in-button">
+                </form>
+                <!-- 更多登录方式 -->
+                <div class="more-sign">
+                    <h6>社交帐号登录</h6>
+                    <ul>
+                        <li><a class="github" target="_blank" href="/"><i class="iconfont icon-github3"></i></a></li>
+                        <li><a class="weixin" target="_blank" href="/"><i class="iconfont icon-weixin-copy"></i></a></li>
+                        <li><a class="qq" target="_blank" href="/"><i class="iconfont icon-qq3"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common/bootstrap.min.js"></script>
 </body>
 </html>

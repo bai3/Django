@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        注册
+    </title>
+    <script src="/static/js/common/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/static/img/common/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/common/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index/auth/register.css">
+    <!-- 阿里妈妈图标库 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_406999_7e73qkalfxkcsor.css">
+    <!-- end -->
 </head>
-<body>
-    注册页面
+<body lang="zh-CN">
+    <div class="sign">
+        <div class="logo"><a href="/"><img src="/static/img/common/logo2.png" alt="Logo" style="width: 117px"></a></div>
+        <div class="main">
+            <h4 class="title">
+                <div class="normal-title">
+                    <a  href="/login">登录</a>
+                    <b>·</b>
+                    <a  class="active" href="/register">注册</a>
+                </div>
+            </h4>
+            <div>
+                <form accept-charset="UTF-8" method="post" class="new_user">
+                    <div class="input-prepend restyle">
+                        <input placeholder="你的昵称" type="text">
+                        <i class="iconfont icon-weibiaoti1"></i>
+                    </div>
+                    <div class="input-prepend restyle no-radius">
+                        <input placeholder="手机号" >
+                        <i class="iconfont icon-phone"></i>
+                    </div>
+                    <div class="input-prepend restyle no-radius">
+                        <input type="text" name="sms_code" placeholder="手机验证码">
+                        <i class="iconfont icon-yanzhengma1"></i>
+                        <a class="btn-up-resend js-send-code-button disable" href="javascript:void(0);">发送验证码</a>
+                    </div>
+                    <div class="input-prepend">
+                        <input placeholder="设置密码" type="password" >
+                        <i class="iconfont icon-lock1"></i>
+                    </div>
+                    <input type="submit" name="commit" value="注册" class="sign-up-button">
+                    <p class="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守<br> <a target="_blank" href="/">用户协议</a> 和 <a target="_blank" href="/">隐私政策</a> 。</p>
+                </form>
+                <!-- 更多注册方式 -->
+                <div class="more-sign">
+                    <h6>社交帐号直接注册</h6>
+                    <ul>
+                        <li><a class="github" target="_blank" href="/"><i class="iconfont icon-github3"></i></a></li>
+                        <li><a class="weixin" target="_blank" href="/"><i class="iconfont icon-weixin-copy"></i></a></li>
+                        <li><a class="qq" target="_blank" href="/"><i class="iconfont icon-qq3"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common/bootstrap.min.js"></script>
 </body>
 </html>
