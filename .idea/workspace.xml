@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efe4a7b-c6e4-4946-b9d0-369a922bb3d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/common/header.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/common/logo.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/common/vue-router3.0.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/common/vue2.5.9.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/common/header.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/img/common/hexo.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/img/common/bak2.jpg" afterPath="$PROJECT_DIR$/static/img/common/bak2.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/admin.py" afterPath="$PROJECT_DIR$/index/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/models.py" afterPath="$PROJECT_DIR$/index/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/templates/index/auth/login.html" afterPath="$PROJECT_DIR$/index/templates/index/auth/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/templates/index/auth/register.html" afterPath="$PROJECT_DIR$/index/templates/index/auth/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/templates/index/index.html" afterPath="$PROJECT_DIR$/index/templates/index/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/templates/index/navbar.html" afterPath="$PROJECT_DIR$/index/templates/index/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common/bootstrap.min.css" afterPath="$PROJECT_DIR$/static/css/common/bootstrap.min.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -130,8 +116,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="435">
+              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -852,7 +838,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <marker date="1511924776822" expanded="true" signature="222306:222315" ph="..." />
           </folding>
         </state>
@@ -916,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="435">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

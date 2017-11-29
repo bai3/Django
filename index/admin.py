@@ -15,7 +15,7 @@ class ShowAdmin(admin.ModelAdmin):
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'rank', 'create_time')
-    search_fields = ('username', 'rank',)
+    search_fields = ('username', 'rank')
 
 
 admin.site.register(Article, PostAdmin)
