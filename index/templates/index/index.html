@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/static/css/common/markdown.css">
 {% endblock %}
 {% block banner %}
-    <div class="jumbotron" style="opacity:.3;margin-top: 50px ">
+    <div class="jumbotron" style="background: none;margin-top: 50px ">
         <h1>
-            <img src="/static/img/common/header.png" class="img-responsive center-block" style="opacity: .8;width: 627px;">
+            <img src="/static/img/common/header.svg" class="img-responsive center-block" style="opacity: .6;width: 627px;">
         </h1>
-        <p style="text-align: center"><a class="btn btn-primary btn-lg" href="https://bai3.github.io/resume/" role="button" target="_blank">Know more about me</a></p>
+        <p style="text-align: center"><a class="btn btn-primary btn-lg" href="javascript: alert('简历的github被我删了，以后补齐。')" role="button" target="_blank">Know more about me</a></p>
     </div>
 {% endblock %}
 {%  block content %}
@@ -31,7 +31,7 @@
                         发表于: {{ article.pub_time }}
                     </div>
                 </header>
-                <div class="body markdown-body" style="overflow-y: hidden;">
+                <div class="body markdown-body" style="overflow-y: hidden;min-height: 200px">
                     {{ article.body | truncatechars:400| safe }}
                 </div>
                 <div class="footer text-center" >
