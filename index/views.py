@@ -8,12 +8,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 
-def page_not_found(request):
-    template = get_template('404.html')
-    html = template.render(locals())
-    return HttpResponse(html)
-
-
 # 公用数据
 def common():
     work_total = Work.objects.count()
@@ -82,11 +76,3 @@ def show(request):
     return HttpResponse(html)
 
 
-# 登录页面
-def login(request):
-    return render(request, 'index/auth/login.html')
-
-
-# 注册页面
-def register(request):
-    return render(request, 'index/auth/register.html')

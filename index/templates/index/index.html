@@ -22,7 +22,7 @@
             <article>
                 <header style="margin-bottom: 30px">
                     <h3 class="text-center">
-                        <a href="/article/{{ article.id }}" class="text-muted">
+                        <a href="/index/article/{{ article.id }}" class="text-muted">
                             {{ article.title }}
                         </a>
                     </h3>
@@ -35,7 +35,7 @@
                     {{ article.body | truncatechars:400| safe }}
                 </div>
                 <div class="footer text-center" >
-                    <a href="/article/{{ article.id }}" class="btn-readmore" role="button">阅读全文»</a>
+                    <a href="/index/article/{{ article.id }}" class="btn-readmore" role="button">阅读全文»</a>
                 </div>
             </article>
             {% endfor %}

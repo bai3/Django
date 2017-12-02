@@ -754,7 +754,7 @@ function parse (str, options) {
 }
 
 /**
- * Compile a string to a template function for the path.
+ * Compile a string to a templates function for the path.
  *
  * @param  {string}             str
  * @param  {Object=}            options

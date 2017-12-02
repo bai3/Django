@@ -20,12 +20,12 @@
                     <li{% if light == 2 %}
                         class="active"
                     {% endif %} >
-                        <a href="/articlesList">文章 <span class="badge">{{ total.1 }}</span></a>
+                        <a href="/index/articlesList">文章 <span class="badge">{{ total.1 }}</span></a>
                     </li>
                     <li {% if light == 3 %}
                         class="active"
                     {% endif %}>
-                        <a href="/show">作品 <span class="badge">{{ total.0 }}</span></a>
+                        <a href="/index/show">作品 <span class="badge">{{ total.0 }}</span></a>
                     </li>
                     <li>
                         <a href="javascript: alert('暂未开放')">论坛</a>
@@ -53,11 +53,11 @@
 {#                        <a href="#">退出</a>#}
 {#                    </li>#}
                     <li class="active">
-                        <a href="/login" >登录</a>
+                        <a href="/user/login" >登录</a>
                     </li>
                     <li>
 {#                        <a href="javascript: alert('对不起,当前网站不对外开放注册。\n需要测试账号请联系站长。')">注册</a>#}
-                        <a href="/register">注册</a>
+                        <a href="/user/register">注册</a>
                     </li>
                 </ul>
             </div>

@@ -13,21 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from index.views import index, article, allarticles, page_not_found, show, login, register
+from index.views import index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
-    url(r'^index$', index),
-    url(r'^article/(\w+)$', article),
-    url(r'^articlesList$', allarticles),
-    url(r'^show$', show),
-    url(r'^404$', page_not_found),
-    url(r'^login$', login),
-    url(r'^register$', register),
+    url(r'^index/', include('index.url')),
+    url(r'^user/', include('user.url')),
 ]
-# handler404 = page_not_found
 
 

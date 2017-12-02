@@ -1,11 +1,12 @@
 from django.contrib import admin
-from .models import Article, Work, User
+from .models import Article, Work, User, Comment
 # Register your models here.
 
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'tag', 'type', 'pub_time')
     search_fields = ('title',)
+    list_filter = ('type', 'tag')
 
 
 class ShowAdmin(admin.ModelAdmin):
@@ -15,9 +16,15 @@ class ShowAdmin(admin.ModelAdmin):
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'rank', 'create_time')
-    search_fields = ('username', 'rank')
+    search_fields = ('username',)
+    list_filter = ('rank',)
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('create_time', 'content')
 
 
 admin.site.register(Article, PostAdmin)
 admin.site.register(Work, ShowAdmin)
 admin.site.register(User, UserAdmin)
+admin.site.register(Comment, CommentAdmin)
