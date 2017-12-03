@@ -1,5 +1,5 @@
 {#  index.html #}
-{% extends 'index/base.html' %}
+{% extends '../layout/base.html' %}
 {% block title %}
     首页
 {% endblock %}
@@ -15,7 +15,7 @@
     </div>
 {% endblock %}
 {%  block content %}
-    {% block aside %}{% include 'index/aside.html' %}{% endblock %}
+    {% block aside %}{% include '../layout/aside.html' %}{% endblock %}
     {% block main %}
         <main  class="col-md-9" >
             {% for article in articles %}

@@ -41,6 +41,7 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^index/', include('index.url')),
     url(r'^user/', include('user.url')),
+    url(r'^comment/', include('comment.url')),
     url(r'^api/', include(router.urls)),
     url(r'^api/', include('rest_framework.urls', namespace='rest_framework'))
 ]

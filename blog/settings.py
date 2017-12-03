@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'user',
     # 'api',
     'rest_framework',
+    # 评论系统
+    'comment',
 ]
 
 MIDDLEWARE = [
@@ -132,10 +134,3 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-
-# github第三方登录配置
-# 请求github第三方登录url
-GITHUB_AUTHORIZE_URL = "https://github.com/login/oauth/authorize"
-GITHUB_CLIENTID = "client_id"
-GITHUB_CLIENTSECRET = 'client_secret'
-GITHUB_CALLBACK = 'http://localhost:8000/oauth/github/'

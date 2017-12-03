@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Article, Work, User, Comment
-# Register your models here.
+from .models import Article, Work, User
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -20,11 +19,9 @@ class UserAdmin(admin.ModelAdmin):
     list_filter = ('rank',)
 
 
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('create_time', 'content')
 
 
 admin.site.register(Article, PostAdmin)
 admin.site.register(Work, ShowAdmin)
 admin.site.register(User, UserAdmin)
-admin.site.register(Comment, CommentAdmin)
+

@@ -1,12 +1,12 @@
 {#  index.html #}
-{% extends 'index/base.html' %}
+{% extends '../layout/base.html' %}
 {% block title %}
     文章目录
 {% endblock %}
 {% block css %}
 {% endblock %}
 {%  block content %}
-    {% block aside %}{% include 'index/aside.html' %}{% endblock %}
+    {% block aside %}{% include '../layout/aside.html' %}{% endblock %}
     {% block main %}
         <main  class="col-md-9" >
             <div class="panel panel-info">
