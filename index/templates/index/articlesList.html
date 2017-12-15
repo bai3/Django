@@ -11,7 +11,7 @@
         <main  class="col-md-9" >
             <div class="panel panel-info">
                 <div class="panel-heading">文章目录</div>
-                <ul class="list-group">
+                <ul class="list-group" style="height: 400px">
                     {% for article in articles %}
                     <li class="list-group-item" style="border: none">
                         <div class="row">
@@ -22,9 +22,9 @@
                                         {{ article.pub_time }}&nbsp;
                                         标签:{{ article.tag }}
                                     </small>
-                                    {% if forloop.counter < 4 %}
+                                    {% if forloop.counter < 4 and articles.number == 1 %}
                                         <sup class="small" style="color: red">
-                                        最新
+                                        new
                                         </sup>
                                     {% endif %}
                                 </a>

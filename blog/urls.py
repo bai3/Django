@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from index.views import index
 from django.contrib.auth.models import User
+from comment.models import Comment
 from rest_framework import routers, serializers, viewsets
 
 
@@ -27,6 +28,17 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'username', 'email', 'is_staff')
 
 
+class GetCommentList(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('id', 'name', 'content', 'create_time')
+
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all().order_by('-id')
+    serializer_class = GetCommentList
+
+
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -35,6 +47,7 @@ class UserViewSet(viewsets.ModelViewSet):
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'getlist', CommentViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

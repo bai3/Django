@@ -1,30 +1,18 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>留言板</title>
-    <link rel="stylesheet" href="/static/css/common/element-ui.css">
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>留言板</title>
+  <link href=/static/css/comment/app.37ecabfe3c5fba06b23798cce11a0b9d.css rel=stylesheet>
 </head>
+
 <body>
-    <div id="app">
-        <el-button v-on:click="visible = true">按钮</el-button>
-        <el-dialog v-bind:visible.sync="visible" title="Hello World">
-            <p>欢迎使用Element</p>
-        </el-dialog>
-    </div>
+  <div id=app></div>
+  <script type=text/javascript src=/static/js/comment/manifest.6e74c9156ef778c2231f.js></script>
+  <script type=text/javascript src=/static/js/comment/vendor.04399f8dcfaa7a6e9ab7.js></script>
+  <script type=text/javascript src=/static/js/comment/app.13ed3890725421c425e2.js></script>
 </body>
+
 </html>
-<script src="/static/js/common/vue2.5.9.js"></script>
-<script src="/static/js/common/element-ui.js"></script>
-<script>
-    new Vue({
-        el: '#app',
-        data: function(){
-            return {
-                visible: false
-            }
-        }
-    })
-</script>

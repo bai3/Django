@@ -90,9 +90,24 @@ article .body{
     margin-bottom: 40px;
     font-size: 0.8em;
 }
+#comment{
+    position: fixed;
+    right: 0px;
+    bottom: 37px;
+    width: 30px;
+    height: 28px;
+    padding-top: 2px;
+    background: blue;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    z-index: 1;
+    cursor: pointer;
+    text-decoration: none;
+}
 #back-to-top{
     position: fixed;
-    right: 10px;
+    right: 0px;
     bottom: 10px;
     width: 30px;
     height: 28px;
@@ -105,7 +120,7 @@ article .body{
     cursor: pointer;
     text-decoration: none;
 }
-#back-to-top:hover{
+#back-to-top:hover, #comment:hover{
     background-color: red !important;
 }
 .markdown-body{
